@@ -1,0 +1,141 @@
+.catalog {
+
+		&__section {
+			@include adaptiveValue("padding-top", 80, 40, $containerWidth,$minWidth, 1);
+		}
+
+		&__container {
+			@include adaptiveValue("padding-top", 60, 40, $containerWidth,$minWidth, 1);
+		}
+
+		&__title {
+			@include adaptiveValue("margin-bottom", 20, 10, $containerWidth,$minWidth, 1);
+		}
+
+		&__text {
+		}
+
+		&__body {
+			@include adaptiveValue("margin-top", 30, 15, $containerWidth,$minWidth, 1);
+			display: grid;
+			row-gap: 50px;
+			column-gap: 30px;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+
+		&__body-item {
+		}
+
+		&__body-image {
+			a {
+				display: inline-block;
+				width: 100%;
+				max-height: 260px;
+				@include adaptiveValue("height", 260, 210, $containerWidth,$minWidth, 1);
+			}
+			img {
+				width: 100%;
+				max-height: 260px;
+				border-radius: 15px;
+			}
+		}
+
+		&__body-info {
+			@include adaptiveValue("margin-top", 25, 15, $containerWidth,$minWidth, 1);
+		}
+
+		&__body-title {
+			font-size: 15px;
+			font-weight: 900;
+			h1 {
+				margin: 15px 0;
+			}
+		}
+
+		&__body-attributes {
+			:not(:last-child) {
+				margin-bottom: 10px;
+			}
+			&_line {
+				display: flex;
+				justify-content: space-between;
+				:not(:last-child) {
+					padding-right: 10px;
+					text-align: left;
+				}
+				:not(:first-child) {
+					text-align: right;
+				}
+				p {
+					font-size: 12px;
+					font-weight: 600;
+					color: $greyColor;
+				}
+			}
+		}
+
+		&__body-text {
+			margin-top: 10px;
+			p {
+				font-size: 12px;
+				font-weight: 600;
+				color: $greyColor;
+				line-height: 20px;
+			}
+		}
+
+		&__body-subtext {
+			margin: 20px 0 30px 0;
+			p {
+				font-size: 12px;
+				font-weight: 600;
+				color: $greyColor;
+				font-style: italic;
+				line-height: 20px;
+			}
+		}
+
+		&__body-buttons {
+			display: flex;
+			justify-content: space-between;
+			a {
+				font-size: 14px;
+				font-weight: 600;
+				border-radius: 5px;
+				border: 1px solid $buttonColor;
+				padding-top: 13px;
+				padding-bottom: 13px;
+				display: inline-block;
+				text-align: center;
+				@include adaptiveValue("width", 166, 140, $containerWidth,$minWidth, 1);
+			}
+			&_buy {
+				display: inline-block;
+				a {
+					background-color: $buttonColor;
+					transition: all .3s ease 0s;
+					@media (any-hover: hover){
+						&:hover{
+							color: $buttonColor;
+							background: none; 
+						} 
+					}
+				}
+			}
+
+			&_about {
+				display: inline-block;
+				a {
+					color: $buttonColor;
+					transition: all .3s ease 0s;
+					@media (any-hover: hover){
+						&:hover{
+							color: $mainColor;
+							background: $buttonColor; 
+						} 
+					}
+				}
+			}
+		}
+}
+

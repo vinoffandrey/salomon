@@ -1,0 +1,221 @@
+.delivery {
+
+	&__section {
+		@include adaptiveValue("padding-top", 80, 50, $containerWidth,$minWidth, 1);
+	}
+
+	&__container {
+		@include adaptiveValue("padding-top", 60, 50, $containerWidth,$minWidth, 1);
+	}
+
+	&__body {
+		display: flex;
+		@media(max-width: $mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__left {
+		@include adaptiveValue("width", 556, 320, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			flex: 1 1 100%;
+			height: 250px!important;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__left-body {
+		@media(max-width: $mobile) {
+			height: 100%!important;
+			text-align: center;
+		}
+		img {
+			@include adaptiveValue("width", 556, 80, $containerWidth,$minWidth, 1);
+			@media(max-width: $mobile) {
+				@include adaptiveValue("width", 450, 320, $containerWidth,$minWidth, 1);
+			}
+		}
+	}
+
+	&__left-item {
+		@media(max-width: $mobile) {
+			height: 100%!important;
+		}
+		img {
+			cursor: pointer;
+			height: auto;
+			border-radius: 15px;
+			@media(max-width: $mobile) {
+				height: 100%!important;
+			}
+		}
+	}
+
+	&__right {
+		@include adaptiveValue("margin-left", 30, 15, $containerWidth,$minWidth, 1);
+		width: 100%;
+		@media(max-width: $mobile) {
+			flex: 1 1 100%;
+			margin-left: 0;
+		}
+	}
+
+	&__right-body {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__right-title {
+		flex: 0 1 auto;
+		h1 {
+			letter-spacing: 1px;
+			font-size: 30px;
+			line-height: 40px;
+			font-weight: 900;
+			@include adaptiveValue("margin-bottom", 20, 10, $containerWidth,$minWidth, 1);
+		}
+	}
+	&__right-attribute {
+		flex: 1 1 100%;
+		:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+	&__right-line {
+			display: flex;
+			justify-content: space-between;
+			:not(:last-child) {
+				padding-right: 10px;
+				text-align: left;
+			}
+			:not(:first-child) {
+				text-align: right;
+			}
+			p {
+				font-size: 12px;
+				line-height: 20px;
+				font-weight: 600;
+				color: $greyColor;
+			}
+	}
+
+	&__right-text {
+		margin-top: 10px;
+			p {
+				font-size: 12px;
+				font-weight: 600;
+				color: $greyColor;
+				line-height: 20px;
+			}
+	}
+
+	&__right-subtext {
+		margin: 20px 0 30px 0;
+			p {
+				font-size: 12px;
+				font-weight: 600;
+				color: $greyColor;
+				font-style: italic;
+				line-height: 20px;
+			}
+	}
+
+	&__right-bottom {
+		flex: 0 1 auto;
+		@include adaptiveValue("padding-top", 35, 15, $containerWidth,$minWidth, 1);
+		&_text {
+			@include adaptiveValue("margin-left", 20, 10, $containerWidth,$minWidth, 1);
+			h4 {
+				font-weight: 900;
+				font-size: 20px;
+				line-height: 25px;
+				@include adaptiveValue("margin-bottom", 10, 5, $containerWidth,$minWidth, 1);
+			}
+			p {
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 25px;
+			}
+			@media(max-width: $mobileSmall) {
+				flex: 1 1 100%;
+				margin-left: 0;
+				margin-top: 20px;
+			}
+		}
+		&_image {
+			@media(max-width: $mobileSmall) {
+				flex: 1 1 100%;
+			}
+		}
+	}
+
+	&__right-cost {
+		font-size: 20px;
+		line-height: 45px;
+		font-weight: 900;
+	}
+
+	&__right-button {
+		background-color: $buttonColor;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("padding-left", 35, 25, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-right", 90, 70, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-top", 15, 15, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 15, 15, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobileSmall) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__resemble {
+		@include adaptiveValue("margin-top", 60, 30, $containerWidth,$minWidth, 1);
+	}
+
+	&__resemble-title {
+		p {
+			@include adaptiveValue("margin-top", 25, 15, $containerWidth,$minWidth, 1);
+			color: $greyColor;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 20px;
+		}
+	}
+
+	&__resemble-body {
+		@include adaptiveValue("margin-top", 30, 15, $containerWidth,$minWidth, 1);
+		display: grid;
+		@include adaptiveValue("gap", 30, 15, $containerWidth,$minWidth, 1);
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	}
+
+	&__resemble-item {
+		padding-bottom: 20px;
+		border: 1px solid $buttonColor;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("padding-left", 20, 15, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-right", 30, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-top", 20, 15, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 20, 15, $containerWidth,$minWidth, 1);
+		img {
+			@include adaptiveValue("margin-right", 15, 15, $containerWidth,$minWidth, 1);
+		}
+		p {
+			font-weight: 800;
+			font-size: 15px;
+			line-height: 25px;
+		}
+	}
+	&__resemble-text {
+		@include adaptiveValue("margin-top", 25, 15, $containerWidth,$minWidth, 1);
+		color: $greyColor;
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 20px;
+	}
+}
+

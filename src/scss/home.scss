@@ -1,0 +1,406 @@
+//====================================================================================================
+//Main_section
+//====================================================================================================
+
+
+.page {
+	background-image: url('../img/main_page/background.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: repeat;
+	background-color: #2B2B2B;
+}
+.section {
+	@include adaptiveValue("padding-top", 40, 20, $containerWidth,$minWidth, 1);
+	@include adaptiveValue("padding-bottom", 40, 20, $containerWidth,$minWidth, 1);
+}
+.main {
+		&__section {
+			background-image: url('../img/main_page/top_section/main_background.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center, -44px;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		&__container {
+			display: flex;
+			align-items: center;
+			flex: 1 1 100%;
+		}
+
+		&__arrow-container {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			a {
+				width: 20px;
+				height: 32px;
+				background-image: url('../img/main_page/top_section/main_arrow.png');
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				animation: arrow 2s infinite;
+			}
+			@include adaptiveValue("margin-bottom", 70, 20, $containerWidth,$minWidth, 1);
+		}
+
+		&__body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+		}
+
+		&__title {
+			min-width: 75rem;
+			h2 {
+				max-width: 670px;
+				font-weight: 900;
+				@include adaptiveValue("font-size", 48, 31, $containerWidth,$minWidth, 1);
+				@include adaptiveValue("line-height", 65, 45, $containerWidth,$minWidth, 1);
+				span {
+					color: $buttonColor;
+				}
+				@media(max-width: $tablet) {
+					max-width: 100%;
+				}
+			}
+			@media(max-width: $tablet) {
+				min-width: auto;
+			}
+		}
+
+		&__text {
+			max-width: 670px;
+			p {
+				margin-top: 40px;
+				font-weight: 500;
+				@include adaptiveValue("font-size", 16, 16, $containerWidth,$minWidth, 1);
+				@include adaptiveValue("line-height", 30, 30, $containerWidth,$minWidth, 1);
+			}
+		}
+
+		&__button {
+			margin-top: 40px;
+			a {
+				padding: 13px 36px;
+			}
+		}
+}
+
+
+//====================================================================================================
+//About_section
+//====================================================================================================
+
+
+.about {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__body {
+	}
+
+	&__top {
+		display: flex;
+		@media(max-width: $tablet) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__top-image {
+		img {
+			border-radius: 15px;
+			@include adaptiveValue("width", 558, 100, $containerWidth, $minWidth, 1);
+		}
+		@media(max-width: $tablet) {
+			flex: 1 1 100%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	&__top-info {
+		@include adaptiveValue("margin-left", 30, 0, $containerWidth,$minWidth, 1);
+		@media(max-width: $tablet) {
+			flex: 1 1 100%;
+			margin-left: 0;
+			margin-top: 25px;
+		}
+	}
+
+	&__top-title {
+	}
+
+	&__top-text {
+		@include adaptiveValue("margin-top", 20, 10, $containerWidth,$minWidth, 1);
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue("margin-top", 100, 40, $containerWidth,$minWidth, 1);
+		flex-wrap: wrap;
+		&._dynamic_adapt_ {
+			justify-content: center;
+		}
+	}
+
+	&__item {
+		text-align: center;
+		flex: 0 1 264px;
+		padding: 0 15px;
+		@include adaptiveValue("margin-bottom", 35, 25, $containerWidth,$minWidth, 1);
+	}
+
+	&__item-image {
+		width: 50px;
+		height: 50px;
+		margin: 0 auto;
+		font-size: 50px;
+		color: $mainColor;
+	}
+
+	&__item-title {
+		@include adaptiveValue("margin-top", 30, 25, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("margin-bottom", 15, 12, $containerWidth,$minWidth, 1);
+		h4 {
+			font-weight: 900;
+			font-size: 15px;
+		}
+	}
+
+	&__item-text {
+		p {
+			line-height: 25px;
+			font-size: 14px;
+		}
+	}
+}
+
+
+//====================================================================================================
+//Gallery_section
+//====================================================================================================
+
+
+
+.gallery {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__title {
+		text-align: center;
+	}
+	&__body-wrapper {
+		position: relative;
+		@include adaptiveValue("padding-left", 50, 25, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-right", 50, 25, $containerWidth,$minWidth, 1);
+	}
+	&__body {
+		@include adaptiveValue("margin-top", 30, 20, $containerWidth,$minWidth, 1);
+	}
+
+	&__slider {
+	}
+
+	&__swiper {
+	}
+	&__button {
+		display: flex;
+		justify-content: center;
+		@include adaptiveValue("margin-top", 50, 35, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobileSmall) {
+			display: none;
+		}
+	}
+}
+.gallery {
+
+	&__slider-item {
+		img {
+			border-radius: 15px;
+			width: 100%;
+		}
+	}
+	&__slider-arrows {
+		display: none;
+		.vsc-initialized & {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	&__slider-arrow {
+		&:after {
+			color: $greyColor;
+			font-size: 35px!important;
+		}
+	}
+	&-slider__arrow-next {
+		right: 0!important;
+		@media(max-width: $mobileSmall) {
+			right: -10px!important;
+		}
+	}
+	&-slider__arrow-prev {
+		left: 0!important;
+		@media(max-width: $mobileSmall) {
+			left: -10px!important;
+		}
+	}
+}
+
+
+//====================================================================================================
+//Garantees_section
+//====================================================================================================
+
+
+
+.garantees {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__body {
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__text {
+		text-align: center;
+		@include adaptiveValue("padding-left", 80, 0, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-right", 80, 0, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobileSmall) {
+			text-align: left;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+
+//====================================================================================================
+//Contacts_section
+//====================================================================================================
+
+
+
+.contacts {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		@media(max-width: 650px) {
+			flex-direction: column;
+		}
+	}
+
+	&__left {
+	}
+
+	&__title {
+	}
+
+	&__left-body {
+		@include adaptiveValue("margin-top", 40, 20, $containerWidth,$minWidth, 1);
+	}
+
+	&__left-item {
+		@include adaptiveValue("margin-bottom", 30, 20, $containerWidth,$minWidth, 1);
+		background-image: url('../img/main_page/contacts_section/tree_icon.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: left center;
+		@include adaptiveValue("padding-left", 70, 55, $containerWidth,$minWidth, 1);
+		position: relative;
+		p {
+			color: $contactsColor;
+			font-size: 14px;
+			font-weight: 500;
+			@include adaptiveValue("margin-bottom", 10, 8, $containerWidth,$minWidth, 1);
+		}
+		a {
+			color: $mainColor;
+			font-size: 16px;
+			font-weight: 900;
+			transition: all .3s ease 0s;
+			@media (any-hover: hover){
+				&:hover{
+					color: $greyColor; 
+				} 
+			}
+		}
+		&::before {
+			position: absolute;
+			font-size: 25px;
+			color: $buttonColor;
+			left: 20px;
+			top: 8px;
+		}
+	}
+
+	&__right {
+		@include adaptiveValue("width", 755, 100, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("height", 300, 200, $containerWidth,$minWidth, 1);
+		@media(max-width: 650px) {
+			width: 100%;
+			margin-top: 20px;
+		}
+	}
+
+	&__right-body {
+		width: 100%;
+		height: 100%;
+		div {
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+			iframe {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+
+@keyframes arrow {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(10px);
+		opacity: .7;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

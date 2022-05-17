@@ -1,0 +1,20 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+//========================================================================================================================================================
+.title {
+	h3 {
+		@include adaptiveValue("font-size", 30, 20, $containerWidth,$minWidth, 1);
+		font-weight: 900;
+		line-height: 45px;
+		color: $mainColor;
+	}
+}
+
+.text {
+	p {
+		@include adaptiveValue("font-size", 14, 14, $containerWidth,$minWidth, 1);
+		font-weight: 500;
+		line-height: 30px;
+		color: $greyColor;
+	}
+}

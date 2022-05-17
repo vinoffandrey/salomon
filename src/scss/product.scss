@@ -1,0 +1,227 @@
+.product {
+
+	&__section {
+		@include adaptiveValue("padding-top", 80, 50, $containerWidth,$minWidth, 1);
+	}
+
+	&__container {
+		@include adaptiveValue("padding-top", 60, 50, $containerWidth,$minWidth, 1);
+	}
+
+	&__body {
+		display: flex;
+		max-width: 1050px;
+		@media(max-width: $mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__left {
+		@include adaptiveValue("width", 556, 320, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			flex: 1 1 100%;
+			height: 250px!important;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__left-body {
+		@media(max-width: $mobile) {
+			height: 100%!important;
+		}
+	}
+
+	&__left-item {
+		@media(max-width: $mobile) {
+			height: 100%!important;
+		}
+		img {
+			cursor: pointer;
+			height: auto;
+			border-radius: 15px;
+			@media(max-width: $mobile) {
+				height: 100%!important;
+			}
+		}
+	}
+
+	&__right {
+		@include adaptiveValue("margin-left", 30, 15, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			flex: 1 1 100%;
+			margin-left: 0;
+		}
+	}
+
+	&__right-body {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__right-title {
+		flex: 0 1 auto;
+		h1 {
+			letter-spacing: 1px;
+			font-size: 30px;
+			line-height: 40px;
+			font-weight: 900;
+			@include adaptiveValue("margin-bottom", 20, 10, $containerWidth,$minWidth, 1);
+		}
+	}
+	&__right-attribute {
+		flex: 1 1 100%;
+		width: 90%;
+		@media(max-width: $mobileSmall) {
+			width: 100%;
+		}
+		:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+	&__right-line {
+			display: flex;
+			justify-content: space-between;
+			:not(:last-child) {
+				padding-right: 10px;
+				text-align: left;
+			}
+			:not(:first-child) {
+				text-align: right;
+			}
+			p {
+				font-size: 12px;
+				font-weight: 600;
+				color: $greyColor;
+			}
+	}
+
+	&__right-text {
+		margin-top: 10px;
+			p {
+				font-size: 12px;
+				font-weight: 600;
+				color: $greyColor;
+				line-height: 20px;
+			}
+	}
+
+	&__right-subtext {
+		margin: 20px 0 30px 0;
+			p {
+				font-size: 12px;
+				font-weight: 600;
+				color: $greyColor;
+				font-style: italic;
+				line-height: 20px;
+			}
+	}
+
+	&__right-bottom {
+		flex: 0 1 auto;
+		width: 90%;
+		@media(max-width: $mobileSmall) {
+			width: 100%;
+		}
+	}
+
+	&__right-cost {
+		font-size: 20px;
+		line-height: 45px;
+		font-weight: 900;
+	}
+
+	&__right-button {
+		a {
+			border: 1px solid $buttonColor;
+			color: $mainColor;
+			transition: all .3s ease 0s;
+					@media (any-hover: hover){
+						&:hover{
+							color: $buttonColor;
+							background: none; 
+						} 
+					}
+					@media(max-width: $mobileSmall) {
+						padding-top: 13px;
+						padding-bottom: 13px;
+					}
+		}
+	}
+
+	&__resemble {
+		@include adaptiveValue("margin-top", 60, 30, $containerWidth,$minWidth, 1);
+	}
+
+	&__resemble-title {
+	}
+	&__resemble-wrapper {
+		position: relative;
+		@media(max-width: $mobile) {
+		@include adaptiveValue("padding-left", 50, 25, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-right", 50, 25, $containerWidth,$minWidth, 1);
+		}
+	}
+	&__resemble-body {
+		@include adaptiveValue("margin-top", 30, 15, $containerWidth,$minWidth, 1);
+	}
+
+	&__resemble-item {
+		padding-bottom: 20px;
+		a {
+			width: 100%;
+		}
+		img {
+			border-radius: 15px;
+			width: 100%;
+			height: auto;
+		}
+		&_title {
+			margin-top: 10px;
+			h2 {
+				font-size: 15px;
+				line-height: 20px;
+				font-weight: 900;
+				color: $mainColor;
+				@include adaptiveValue("margin-top", 20, 10, $containerWidth,$minWidth, 1);
+			}
+			
+		}
+	}
+}
+.product {
+
+	&__slider-arrows {
+		display: none;
+		@media(min-width: $mobile) {
+			display: none;
+		}
+		.vsc-initialized & {
+			display: block;
+			height: 100%;
+			width: 100%;
+			@media(min-width: $mobile) {
+				display: none;
+			}
+		}
+	}
+	&__slider-arrow {
+		top: 40%!important;
+		&:after {
+			color: $greyColor;
+			font-size: 35px!important;
+		}
+	}
+	&-slider__arrow-next {
+		right: 0!important;
+		@media(max-width: $mobileSmall) {
+			right: -10px!important;
+		}
+	}
+	&-slider__arrow-prev {
+		left: 0!important;
+		@media(max-width: $mobileSmall) {
+			left: -10px!important;
+		}
+	}
+}

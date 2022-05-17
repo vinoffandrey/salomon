@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Карточка товара"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page" data-sticky>
+			<div class="product__section section">
+				<div class="product__container">
+					<div class="product__body">
+						<div class="product__left">
+							<div class="product__left-body product__swiper" data-gallery>
+								<div class="product__left-item -ibg">
+									<img data-gallery-item src="img/main_page/gallery_section/gallery_item_1.png" alt="">
+								</div>
+								<div class="product__left-item -ibg">
+									<img data-gallery-item src="img/main_page/gallery_section/gallery_item_2.png" alt="">
+								</div>
+								<div class="product__left-item -ibg">
+									<img data-gallery-item src="img/main_page/gallery_section/gallery_item_3.png" alt="">
+								</div>
+								<div class="product__left-item -ibg">
+									<img data-gallery-item src="img/main_page/gallery_section/gallery_item_4.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="product__right">
+							<div class="product__right-body">
+								<div class="product__right-title">
+									<h1>Наименование изделия</h1>
+								</div>
+								<div class="product__right-attribute">
+									<div class="product__right-line">
+										<p>Размеры:</p>
+										<p>800*450*600 мм</p>
+									</div>
+									<div class="product__right-line">
+										<p>Труба:</p>
+										<p>40*40 мм</p>
+									</div>
+									<div class="product__right-line">
+										<p>Дерево:</p>
+										<p>слэб дуба</p>
+									</div>
+									<div class="product__right-line">
+										<p>Размеры:</p>
+										<p>800*450*600 мм</p>
+									</div>
+									<div class="product__right-text">
+										<p>Ручная сборка. Срок годности 30 лет</p>
+									</div>
+									<div class="product__right-subtext">
+										<p>* Возможен индивидуальный заказ с другими размерами и цветами</p>
+									</div>
+								</div>
+								<div class="product__right-bottom">
+									<div class="product__right-cost">
+										<p>15 000 руб.</p>
+									</div>
+									<div class="product__right-button popup__button">
+										<a href="#" data-popup="#popup-product">Оформить заказ</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="product__resemble">
+						<div class="product__resemble-title title">
+							<h3>Похожие товары</h3>
+						</div>
+						<div class="product__resemble-wrapper">
+							<div class="product__resemble-slider">
+								<div class="product__resemble-body product-resemble__swiper">
+									<div class="product__resemble-item">
+										<a href="#">
+											<img src="img/main_page/gallery_section/gallery_item_1.png" alt="">
+											<div class="product__resemble-item_title">
+												<h2>Наименование изделия №1</h2>
+											</div>
+										</a>
+									</div>
+									<div class="product__resemble-item">
+										<a href="#">
+											<img src="img/main_page/gallery_section/gallery_item_1.png" alt="">
+											<div class="product__resemble-item_title">
+												<h2>Наименование изделия №1</h2>
+											</div>
+										</a>
+									</div>
+									<div class="product__resemble-item">
+										<a href="#">
+											<img src="img/main_page/gallery_section/gallery_item_1.png" alt="">
+											<div class="product__resemble-item_title">
+												<h2>Наименование изделия №1</h2>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="product__slider-arrows">
+								<div class="product__slider-arrow product-slider__arrow-next swiper-button-next"></div>
+								<div class="product__slider-arrow product-slider__arrow-prev swiper-button-prev"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+//====================================================================================================
+
+//====================================================================================================
+
+.header {
+	background-color: $backgroundFooter;
+	z-index: 12;
+	position: fixed!important;
+	bottom: auto!important;
+	top: 0px!important;
+	left: 0px!important;
+	width: 100%!important;
+	&._header-scroll {
+		z-index: 12;
+		position: fixed!important;
+		bottom: auto!important;
+		top: 0px!important;
+		left: 0px!important;
+		width: 100%!important;
+	}
+	&__container {
+		@include adaptiveValue("padding-top", 18, 10, $containerWidth,$maxWidthContainer, 1);
+		@include adaptiveValue("padding-bottom", 18, 10, $containerWidth,$maxWidthContainer, 1);
+		
+	}
+
+	&__menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+.menu {
+
+	&__icon {
+	}
+
+	&__logo {
+		display: flex;
+		&-link {
+			display: flex;
+		}
+	}
+
+	&__image {
+		margin-right: 12px;
+	}
+
+	&__title {
+		h1 {
+			line-height: 22px;
+			font-size: 16px;
+			font-weight: 900;
+		}
+	}
+
+	&__body {
+		@include adaptiveValue("margin-left", 34, 10, $containerWidth,$maxWidthContainer, 1);
+		@include adaptiveValue("margin-right", 34, 10, $containerWidth,$maxWidthContainer, 1);
+		@media(max-width: 833px) {
+			padding: 30px 0;
+			margin-left: 0;
+			position: fixed;
+			transform: translateY(-300%);
+			visibility: hidden;
+			opacity: 0;
+			background-color: $backgroundMain;
+			transition: transform .3s ease 0s;
+			.menu-open & {
+				transform: translateY(0);
+				visibility: visible;
+				opacity: 1;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.menu__right  {
+					flex-direction: column;
+					align-items: center;
+				}
+				.menu__contacts {
+					align-items: center;
+				}
+				.menu__button {
+					margin-top: 20px;
+					a {
+						margin-left: 0;
+					}
+				}
+				.menu__contacts-phone {
+					margin: 20px 0;
+				}
+				.menu__list {
+					flex-direction: column;
+					li {
+						text-align: center;
+						margin: 10px 0;
+						font-weight: 600;
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__link {
+		color: $greyColor;
+		transition: all .3s ease 0s;
+		@include adaptiveValue("padding-left", 12, 10, $containerWidth,$maxWidthContainer, 1);
+		@include adaptiveValue("padding-right", 12, 10, $containerWidth,$maxWidthContainer, 1);
+		@media (any-hover: hover){
+			&:hover{
+				color: $mainColor;
+			} 
+		}
+		@media(max-width: $tablet) {
+			padding: 0 5px;
+		}
+	}
+
+	&__right {
+		display: flex;
+		@media(max-width: 1150px) and (min-width: 834px) {
+			position: fixed;
+			transform: translateY(-300%);
+			visibility: hidden;
+			opacity: 0;
+			background-color: $backgroundMain;
+			transition: transform .3s ease 0s;
+			.menu-open & {
+				transform: translateY(0);
+				visibility: visible;
+				opacity: 1;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.menu__button {
+					margin-top: 20px;
+				}
+				.menu__contacts-phone {
+					margin: 20px 0;
+				}
+			}
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: space-around;
+		&-phone {
+			font-weight: 900;
+			font-size: 14px;
+			transition: all .3s ease 0s;
+			@media (any-hover: hover){
+				&:hover{
+					color: $greyColor; 
+				} 
+			}
+		}
+		&-mail {
+			font-weight: 500;
+			font-size: 13px;
+			color: $greyColor;
+			transition: all .3s ease 0s;
+			@media (any-hover: hover){
+				&:hover{
+					color: $mainColor; 
+				} 
+			}
+		}
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		a {
+			@include adaptiveValue("margin-left", 20, 10, $containerWidth,$maxWidthContainer, 1);
+			}
+			@media (any-hover: hover){
+				&:hover{
+					color: $greyColor; 
+				} 
+			}
+	}
+}
+.icon-menu {
+}
+
+
+
+
+
+
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: 1150px) {
+		background-color: $buttonColor;
+		border-radius: 5px;
+		display: block;
+		position: relative;
+		flex: 0 0 rem(40);
+		width: rem(40);
+		height: rem(40);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: rem(7.5);
+			position: absolute;
+			width: rem(25);
+			height: rem(3);
+			background-color: #fff;
+		}
+		&::before {
+			top: rem(10);
+		}
+		&::after {
+			bottom: rem(10);
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - rem(1));
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - rem(1));
+			}
+		}
+	}
+}
+

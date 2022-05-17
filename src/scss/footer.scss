@@ -1,0 +1,38 @@
+//====================================================================================================
+
+//====================================================================================================
+
+.footer {
+	background-color: $backgroundFooter;
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: 500;
+		color: $contactsColor;
+		font-size: 12px;
+		@include adaptiveValue("height", 50, 65, 1, $containerWidth,$minWidth);
+		@media(max-width: $mobileSmall) {
+			flex-direction: column;
+			justify-content: space-evenly;
+		}
+	}
+
+	&__left {
+	}
+
+	&__right {
+		a {
+			text-decoration: underline;
+			transition: all .3s ease 0s;
+			@media (any-hover: hover){
+				&:hover{
+					color: $buttonColor; 
+				} 
+			}
+		}
+	}
+}

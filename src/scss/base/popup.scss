@@ -1,0 +1,252 @@
+// Основные цвета
+$mainColor: #fff; // Цвет шрифта по умолчанию
+$greyColor: #D4D4D4;
+$buttonColor: #E2A225;
+$contactsColor: #878787;
+$backgroundFooter: #151515;
+$backgroundMain: #2B2B2B;
+
+
+// НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1200;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 30;
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+// Ширина страбатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+
+
+body::after {
+	content: "";
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+	pointer-events: none;
+	z-index: 149;
+}
+body.popup-show::after {
+	opacity: 1;
+}
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	padding: rem(30) rem(10);
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	z-index: 150;
+	pointer-events: none;
+}
+.popup_show {
+	visibility: visible;
+	overflow: auto;
+	pointer-events: auto;
+}
+.popup_show .popup__content {
+	visibility: visible;
+	transform: scale(1);
+}
+.popup__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+	flex: 1 1 auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup__content {
+	visibility: hidden;
+	transform: scale(0);
+	transition: transform 0.3s ease 0s;
+	background-color: #2A2A2A;
+	padding: rem(70);
+	width: 100%;
+	max-width: rem(600);
+	border-radius: rem(20);
+	@media(max-width: $mobile) {
+		padding: rem(50);
+	}
+	@media(max-width: $mobileSmall) {
+		padding: rem(40) rem(20);
+	}
+	.lock & {
+		visibility: visible;
+	}
+}
+
+
+
+.popup {
+	&__close {
+		position: absolute;
+		top: rem(15);
+		right: rem(15);
+		width: 30px;
+		height: 30px;
+		transition: all .3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				&:after {
+					transform: rotate(-45deg);
+				}
+				&:before {
+					transform: rotate(45deg);
+				}
+			} 
+		}
+		&:after {
+			content: "";
+			width: 30px;
+			height: 2px;
+			background-color: $mainColor;
+			transform: rotate(45deg);
+			position: absolute;
+			top: 14px;
+			left: 0;
+			transition: all .3s ease 0s;
+		}
+		&:before {
+			content: "";
+			width: 30px;
+			height: 2px;
+			background-color: $mainColor;
+			transform: rotate(-45deg);
+			position: absolute;
+			top: 14px;
+			left: 0;
+			transition: all .3s ease 0s;
+		}
+	}
+	&__text {
+		text-align: center;
+	}
+
+	&__title {
+		h6 {
+			font-weight: 800;
+			font-size: 30px;
+			line-height: 45px;
+		}
+	}
+
+	&__subtitle {
+		p {
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 20px;
+			color: $greyColor;
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+		input {
+			background-color: #3E3E3E;
+			border-radius: 10px;
+			padding: 22px;
+			color: $greyColor;
+			font-weight: 500;
+			font-size: 14px;
+			margin-bottom: 20px;
+			&:focus {
+				outline: 0;
+				outline-offset: 0;
+			}
+		}
+		&-submit {
+			background-color: $buttonColor!important;
+			color: $mainColor!important;
+			cursor: pointer;
+			transition: all .3s ease 0s;
+			@media (any-hover: hover){
+				&:hover{
+					color: $greyColor!important;
+				} 
+			}
+		}
+	}
+
+	&__messanger {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		input {
+			margin-bottom: 0;
+			display: none;
+		}
+		label {
+			width: 55px;
+			height: 55px;
+			border-radius: 10px;
+			background-color: #3E3E3E;
+			font-size: 25px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: all .3s ease 0s;
+		}
+		p {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 20px;
+			color: $greyColor;
+		}
+	}
+
+	&__politics {
+		font-weight: 500;
+			font-size: 14px;
+			line-height: 20px;
+			color: $greyColor;
+			a {
+				text-decoration: underline;
+				transition: all .3s ease 0s;
+				@media (any-hover: hover){
+					&:hover{
+						color: $buttonColor; 
+					} 
+				}
+			}
+	}
+}
+.main {
+
+	&__right-politics {
+	}
+}
+.popup__input:checked ~ .popup__label {
+	background-color: $buttonColor;
+}

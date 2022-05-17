@@ -355,6 +355,11 @@ body.popup-show::after {
     color: #D4D4D4;
   }
 }
+@media (max-width: 29.99875em) {
+  .popup__button {
+    padding: 13px 17px !important;
+  }
+}
 
 @font-face {
   font-family: "icons";
@@ -1391,7 +1396,7 @@ body.popup-show::after {
     flex: 1 1 100%;
   }
   .about__top-image img {
-    width: 100%;
+    width: 100% !important;
   }
 }
 @media (min-width: 76.875em) {
@@ -1804,7 +1809,7 @@ body.popup-show::after {
 }
 @media (max-width: 650px) {
   .contacts__right {
-    width: 100%;
+    width: 100% !important;
     margin-top: 20px;
   }
 }

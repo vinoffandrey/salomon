@@ -124,7 +124,7 @@
 		@media(max-width: $tablet) {
 			flex: 1 1 100%;
 			img {
-				width: 100%;
+				width: 100%!important;
 			}
 		}
 	}
@@ -369,7 +369,7 @@
 		@include adaptiveValue("width", 755, 100, $containerWidth,$minWidth, 1);
 		@include adaptiveValue("height", 300, 200, $containerWidth,$minWidth, 1);
 		@media(max-width: 650px) {
-			width: 100%;
+			width: 100%!important;
 			margin-top: 20px;
 		}
 	}

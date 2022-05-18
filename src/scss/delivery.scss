@@ -56,7 +56,7 @@
 		width: 100%;
 		@media(max-width: $mobile) {
 			flex: 1 1 100%;
-			margin-left: 0;
+			margin-left: 0!important;
 		}
 	}
 

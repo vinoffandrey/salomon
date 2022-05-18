@@ -147,6 +147,9 @@
 						padding-bottom: 13px;
 					}
 		}
+		@media(max-width: $mobileSmall) {
+			padding: 13px 0!important;
+		}
 	}
 
 	&__resemble {

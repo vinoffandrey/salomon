@@ -202,6 +202,9 @@ body.popup-show::after {
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 20px;
+		@media(max-width: $mobileSmall) {
+			flex-wrap: wrap;
+		}
 		input {
 			margin-bottom: 0;
 			display: none;
@@ -217,12 +220,22 @@ body.popup-show::after {
 			justify-content: center;
 			cursor: pointer;
 			transition: all .3s ease 0s;
+			@media(max-width: $mobileSmall) {
+				font-size: 21px!important;
+				width: 45px!important;
+				height: 45px!important;
+			}
 		}
 		p {
 			font-weight: 500;
 			font-size: 14px;
 			line-height: 20px;
 			color: $greyColor;
+			@media(max-width: $mobileSmall) {
+				flex: 1 1 100%;
+				text-align: left;
+				margin-bottom: 10px;
+			}
 		}
 	}
 

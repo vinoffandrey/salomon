@@ -24,12 +24,21 @@
 			display: flex;
 			align-items: center;
 			flex-direction: column;
+			@media(max-width: $mobileSmall) {
+				height: 100%!important;
+			}
+			@media(max-height: 500px) {
+				height: 100%!important;
+			}
 		}
 
 		&__container {
 			display: flex;
 			align-items: center;
 			flex: 1 1 100%;
+			@media(max-height: 700px) {
+				padding-top: 64px;
+			}
 		}
 
 		&__arrow-container {
@@ -46,6 +55,12 @@
 				animation: arrow 2s infinite;
 			}
 			@include adaptiveValue("margin-bottom", 70, 20, $containerWidth,$minWidth, 1);
+			@media(max-height: 700px) {
+				margin-bottom: 20px;
+			}
+			@media(max-width: $mobileSmall) {
+				display: none!important;
+			}
 		}
 
 		&__body {
@@ -88,6 +103,9 @@
 			margin-top: 40px;
 			a {
 				padding: 13px 36px;
+			}
+			@media(max-width: $mobileSmall) {
+				margin-bottom: 20px;
 			}
 		}
 }

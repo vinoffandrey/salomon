@@ -161,7 +161,7 @@
 		border-radius: 5px;
 		display: flex;
 		align-items: center;
-		@include adaptiveValue("padding-left", 35, 25, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-left", 35, 15, $containerWidth,$minWidth, 1);
 		@include adaptiveValue("padding-right", 90, 70, $containerWidth,$minWidth, 1);
 		@include adaptiveValue("padding-top", 15, 15, $containerWidth,$minWidth, 1);
 		@include adaptiveValue("padding-bottom", 15, 15, $containerWidth,$minWidth, 1);

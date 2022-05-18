@@ -39,6 +39,9 @@
 			@media(max-height: 700px) {
 				padding-top: 64px;
 			}
+			@media(max-width: $mobileSmall) {
+				padding-top: 80px!important;
+			}
 		}
 
 		&__arrow-container {
@@ -260,6 +263,9 @@
 			display: block;
 			height: 100%;
 			width: 100%;
+		}
+		@media(max-width: $mobileSmall) {
+			display: block!important;
 		}
 	}
 	&__slider-arrow {

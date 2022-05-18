@@ -50,14 +50,14 @@ $mobileSmall: em(479.98); // Телефоны S
 		border-radius: 5px;
 		font-weight: 600;
 		display: block;
+		@media(max-width: $mobileSmall) {
+			padding: 13px 17px!important;
+		}
 		}
 		transition: all .3s ease 0s;
 		@media (any-hover: hover){
 			&:hover{
 				color: #D4D4D4; 
 			} 
-		}
-		@media(max-width: $mobileSmall) {
-			padding: 13px 17px!important;
 		}
 }

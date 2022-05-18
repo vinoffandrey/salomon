@@ -1269,12 +1269,7 @@ body.popup-show::after {
   align-items: center;
   flex-direction: column;
 }
-@media (max-width: 29.99875em) {
-  .main__section {
-    height: 100% !important;
-  }
-}
-@media (max-height: 500px) {
+@media (max-height: 550px) {
   .main__section {
     height: 100% !important;
   }
@@ -1286,7 +1281,7 @@ body.popup-show::after {
 }
 @media (max-height: 700px) {
   .main__container {
-    padding-top: 64px;
+    padding-top: 80px !important;
   }
 }
 @media (max-width: 29.99875em) {
